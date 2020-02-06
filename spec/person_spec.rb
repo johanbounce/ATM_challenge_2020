@@ -37,6 +37,7 @@ describe Person do
     end
   end
 
+  describe 'can manage funds if an account been created' do
   let(:atm) { Atm.new }
   # As a Person with a Bank Account,
   # in order to be able to put my funds in the account ,
@@ -49,4 +50,4 @@ describe Person do
 
 end
 
-
+end

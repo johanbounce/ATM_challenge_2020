@@ -17,7 +17,7 @@ class Person
 
 
  def deposit (amount) 
-  @cash = @cash - amount 
+  @cash =   amount 
         
  end
  
