@@ -6,10 +6,29 @@ class Account
     def initialize(attrs = {})
         @exp_date = set_expire_date
         @account_status = :active
+        set_owner(attrs[:owner])
+        
     end
     
     def set_expire_date()
         Date.today.next_year(Account::STANDARD_VALIDITY_YEARS).strftime('%m/%y')
     end
+
+    def self.deactivate(account)
+        account.account_status = :deactivated
+    end  
+
+    def missing_owner
+        raise "An Account owner is required"
+      end
+
+    private
+    def set_owner(obj)
+    # here we are using a Ternary Operator for the first time
+    # take a look at this StackOverflow aswer to find out more
+    # http://stackoverflow.com/a/4252945
+    obj == nil ?  missing_owner : @owner = obj
+    end
+
 
 end
