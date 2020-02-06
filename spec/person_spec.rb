@@ -32,7 +32,21 @@ describe Person do
       expect(subject.account).to be_an_instance_of Account
     end
 
+    it 'with himself as an owner' do
+      expect(subject.account.owner).to be(subject.name)
+    end
+  end
+
+  let(:atm) { Atm.new }
+  # As a Person with a Bank Account,
+  # in order to be able to put my funds in the account ,
+  # i would like to be able to make a deposit
+  before { subject.create_account }
+  it 'can deposit funds' do
+    expect(subject.deposit(100)).to be_truthy
+  end
+
 
 end
 
-end
+

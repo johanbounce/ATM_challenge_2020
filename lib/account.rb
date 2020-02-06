@@ -8,6 +8,7 @@ class Account
         @account_status = :active
         @owner = set_owner(attrs[:owner])
         @pin_code = rand(1000..9999)
+        @balance = 0
     end
     
     def set_expire_date()
