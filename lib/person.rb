@@ -6,5 +6,10 @@ class Person
     @name = :name   
   end
 
+  def missing_name
+    raise "A name is required"
+  end
+
+
 end    
  

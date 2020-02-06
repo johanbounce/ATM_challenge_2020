@@ -6,7 +6,8 @@ class Account
     def initialize(attrs = {})
         @exp_date = set_expire_date
         @account_status = :active
-        set_owner(attrs[:owner])
+        @owner = set_owner(attrs[:owner])
+        @pin_code = rand(1000..9999)
         
     end
     
@@ -24,7 +25,7 @@ class Account
     # here we are using a Ternary Operator for the first time
     # take a look at this StackOverflow aswer to find out more
     # http://stackoverflow.com/a/4252945
-    obj == nil ?  missing_owner : @owner = obj
+    obj == nil ? missing_owner : @owner = obj
     end
 
     def missing_owner
