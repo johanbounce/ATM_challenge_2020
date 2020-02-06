@@ -1,11 +1,13 @@
 require './lib/account.rb'
+require './lib/person.rb'
 require 'date'
+
 
 
 describe Account do
 
     let(:person) {instance_double('Person', name: 'Thomas')} 
-    subject { described_class.new({owner: person}) }
+      subject { described_class.new({owner: person}) }
 
     it 'check the length of a number' do
         number = 1234

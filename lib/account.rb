@@ -18,16 +18,17 @@ class Account
         account.account_status = :deactivated
     end  
 
-    def missing_owner
-        raise "An Account owner is required"
-      end
-
     private
+    
     def set_owner(obj)
     # here we are using a Ternary Operator for the first time
     # take a look at this StackOverflow aswer to find out more
     # http://stackoverflow.com/a/4252945
     obj == nil ?  missing_owner : @owner = obj
+    end
+
+    def missing_owner
+        raise "An Account owner is required"
     end
 
 
