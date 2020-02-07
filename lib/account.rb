@@ -1,7 +1,7 @@
 class Account
     STANDARD_VALIDITY_YEARS = 5
 
-    attr_accessor :exp_date, :account_status, :pin_code, :balance, :owner
+    attr_accessor :exp_date, :account_status, :pin_code, :balance, :owner, :purpose
 
     def initialize(attrs = {})
         @exp_date = set_expire_date
@@ -9,6 +9,7 @@ class Account
         @owner = set_owner(attrs[:owner])
         @pin_code = rand(1000..9999)
         @balance = 0
+        @purpose = nil
     end
     
     def set_expire_date()
