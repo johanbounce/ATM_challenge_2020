@@ -51,6 +51,69 @@ License:
 The follwing code is open source as part of a  learning process type of project.
 Feel free to implement and/or suggest any modifications to it.
 
+Instructions:
+
+Open up your terminal 
+Start running IRB
+
+$ irb
+
+Load all files from /lib
+
+$ load 'lib/atm.rb
+$ load 'lib/account.rb
+$ load 'lib/person.rb
+
+Create an Atm
+
+$ atm = Atm.new
+
+Create a Person and give it a name
+
+$ the_person = Person.new(name: "johan")
+
+Give the person some cash
+
+$ the_person.cash = 1000
+
+Create an Account for the Person, and make sure that the bank gave you a four digit pin code when opening the account, and that the expiration date has not past
+
+$ the_person.create_account
+
+Set a purpose for opening account
+
+$ the_person.account.purpose = "going to the pub after week 1 of CraftAcademy"
+
+Deposit som cash in to the account
+
+$ the_person.deposit(500)
+
+Check so that the Atm is not a fake one, by checking your Account balance
+
+$ the_person.account.balance
+
+Phew! Now withdraw some money. For that to complete you need to choose your amount, enter your pin code, have a valid account, and use a actual atm
+
+$ the_person.withdraw(amount: 250, pin: the_person.account.pin_code, account: the_person.account, atm: atm)
+
+Change the purpose for the account 
+
+$ the_person.account.purpose = "Save the rest of the money until you have finished week 2 of CraftAcademy"
+
+Deactivate your account
+
+$ the_person.account.deactivate
+
+Activate your account again 
+
+$ the_person.account.activatethe
+
+
+
+
+
+
+
 Authors:
 https://github.com/Carltesio
 https://github.com/johanbounce
