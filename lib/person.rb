@@ -13,10 +13,13 @@ class Person
     @account = Account.new(owner: name)
   end  
 
-  #   def deposit (amount) 
-  #     @cash += amount 
-  #    @account = nil ? missing_account : deposit(amount)
-  # end
+  def deposit (amount) 
+    if @account != nil
+       @cash -= amount
+       @account.balance += amount
+    else raise 'No account present'   
+   end
+  end 
 
  
   private
