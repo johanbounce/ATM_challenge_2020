@@ -33,7 +33,7 @@ describe Person do
     end
 
     it 'with himself as an owner' do
-      expect(subject.account.owner).to be(subject.name)
+      expect(subject.account.owner).to be_an_instance_of Person
     end
   end
 

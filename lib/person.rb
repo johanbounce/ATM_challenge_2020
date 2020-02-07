@@ -13,7 +13,7 @@ class Person
 
   # we need to review this method- we don+t think it serves the purpose even thought the test passes
   def create_account
-    @account = Account.new(owner: self)
+    self.account = Account.new(owner: self)
   end  
 
   def deposit (amount) 
